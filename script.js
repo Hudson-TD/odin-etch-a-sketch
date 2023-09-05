@@ -9,12 +9,13 @@ let gridValue = undefined;
 canvasContainer.id = "grid-container";
 
 function generateGrid() {
-  for (let i = 1; i <= gridValue; i++) {
+  for (let i = 1; i <= gridValue * gridValue; i++) {
+    canvasContainer.style.cssText = `width:800px;height:800px;display:grid;grid-template-columns:repeat(${gridValue}, 1fr);grid-template-rows:repeat(${gridValue},1fr);grid-row-gap:0px;grid-column-gap:0px;`;
     let divElement = document.createElement("div");
     divElement.classList.add("grid-block");
     canvasContainer.appendChild(divElement);
   }
-  canvasContainer.style.cssText = `display:grid;grid-template-columns:repeat(${gridValue},1fr);grid-template-rows:repeat(${gridValue},1fr);grid-column-gap:0px;grid-row-gap:0px;`;
+
   mainContainer.appendChild(canvasContainer);
 }
 

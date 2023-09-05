@@ -1,7 +1,6 @@
 #header-title {
   font-size: 50px;
   text-align: center;
-  padding: 20px;
 }
 
 footer {
@@ -26,11 +25,16 @@ button {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
+}
+#main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid-block {
-  background-color: blue;
-  padding: 10px;
   border: 1px solid black;
+  width: auto;
+  height: auto;
 }
