@@ -1,3 +1,8 @@
+* {
+  background-color: rgb(75, 97, 77);
+  color: white;
+}
+
 #header-title {
   font-size: 50px;
   text-align: center;
@@ -6,17 +11,34 @@
 
 main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+footer {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: black;
+  font-weight: bolder;
+  text-shadow: none;
+}
+
 #controls-container {
   display: flex;
-  flex-direction: column;
-  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 50px;
-  margin-right: 100px;
-  border: 2px solid grey;
+  margin-bottom: 25px;
 }
 
 #grid-container {
@@ -25,6 +47,8 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  border: 3px solid lavender;
+  border-radius: 10px;
   width: 800px;
   height: 800px;
 }

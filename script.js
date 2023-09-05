@@ -23,7 +23,7 @@ init();
 let gridBlocks = document.querySelectorAll(".grid-block");
 
 gridBlocks.forEach((block) => {
-  block.addEventListener("mouseover", () => block.classList.add("blue"));
+  block.addEventListener("click", () => block.classList.add("blue"));
 });
 
 clearBtn.addEventListener("click", () => {
