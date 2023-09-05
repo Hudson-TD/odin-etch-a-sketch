@@ -38,3 +38,7 @@ button {
   width: auto;
   height: auto;
 }
+
+.default {
+  background-color: grey;
+}

@@ -1,10 +1,11 @@
+let gridValue = undefined;
+
 const mainContainer = document.getElementById("main-container");
 const canvasContainer = document.createElement("div");
 const value = document.querySelector("#value");
 const input = document.querySelector("#grid-formatter");
-
-let clearBtn = document.getElementById("clear-sketch");
-let gridValue = undefined;
+const clearBtn = document.getElementById("clear-sketch");
+const updateGrid = document.getElementById("update-grid");
 
 canvasContainer.id = "grid-container";
 
@@ -42,14 +43,14 @@ function init() {
 }
 init();
 
-let gridBlocks = document.querySelectorAll(".grid-block");
+let gridBlocks = document.querySelectorAll("div.grid-block");
 
 gridBlocks.forEach((block) => {
-  block.addEventListener("click", () => block.classList.add("blue"));
+  block.addEventListener("mouseover", () => block.classList.add("default"));
 });
 
 clearBtn.addEventListener("click", () => {
   gridBlocks.forEach((block) => {
-    block.classList.remove("blue");
+    block.classList.remove("default");
   });
 });
