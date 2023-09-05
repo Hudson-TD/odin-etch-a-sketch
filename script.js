@@ -1,23 +1,44 @@
-const mainContainer = document.getElementById("canvas-container");
+const mainContainer = document.getElementById("main-container");
 const canvasContainer = document.createElement("div");
-canvasContainer.id = "grid-container";
+const value = document.querySelector("#value");
+const input = document.querySelector("#grid-formatter");
 
 let clearBtn = document.getElementById("clear-sketch");
+let gridValue = undefined;
+
+canvasContainer.id = "grid-container";
 
 function generateGrid() {
-  for (let i = 1; i <= 256; i++) {
+  for (let i = 1; i <= gridValue; i++) {
     let divElement = document.createElement("div");
-    divElement.className = "grid-block";
-    divElement.id = `grid-section-${i}`;
+    divElement.classList.add("grid-block");
     canvasContainer.appendChild(divElement);
   }
+  canvasContainer.style.cssText = `display:grid;grid-template-columns:repeat(${gridValue},1fr);grid-template-rows:repeat(${gridValue},1fr);grid-column-gap:0px;grid-row-gap:0px;`;
+  mainContainer.appendChild(canvasContainer);
 }
 
-function init() {
-  mainContainer.appendChild(canvasContainer);
+function refreshGrid() {
   generateGrid();
 }
 
+function init() {
+  let startingGrid = window.prompt(
+    "Please enter a value between 16 and 100 to generate your canvas!"
+  );
+
+  if (startingGrid < 1) {
+    window.alert("You must enter a number between 1-100 to proceed.");
+    init();
+  } else if (startingGrid > 100) {
+    window.alert("You must enter a number between 1-100 to proceed.");
+    init();
+  } else {
+    gridValue = startingGrid;
+    generateGrid();
+  }
+  value.textContent = `${gridValue} x ${gridValue}`;
+}
 init();
 
 let gridBlocks = document.querySelectorAll(".grid-block");

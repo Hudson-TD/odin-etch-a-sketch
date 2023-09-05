@@ -1,19 +1,7 @@
-* {
-  background-color: rgb(75, 97, 77);
-  color: white;
-}
-
 #header-title {
   font-size: 50px;
   text-align: center;
   padding: 20px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 footer {
@@ -41,26 +29,8 @@ button {
   margin-bottom: 25px;
 }
 
-#grid-container {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid lavender;
-  border-radius: 10px;
-  width: 800px;
-  height: 800px;
-}
-
 .grid-block {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-}
-
-.blue {
-  background-color: black;
+  background-color: blue;
+  padding: 10px;
+  border: 1px solid black;
 }
