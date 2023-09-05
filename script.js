@@ -1,4 +1,4 @@
-const mainContainer = document.getElementById("main-container");
+const mainContainer = document.getElementById("canvas-container");
 const canvasContainer = document.createElement("div");
 canvasContainer.id = "grid-container";
 

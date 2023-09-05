@@ -1,5 +1,25 @@
+#header-title {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#controls-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid grey;
+  padding: 50px;
+}
+
 #grid-container {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
