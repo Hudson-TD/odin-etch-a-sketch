@@ -13,8 +13,10 @@ main {
 #controls-container {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
+  gap: 50px;
+  margin-right: 100px;
   border: 2px solid grey;
-  padding: 50px;
 }
 
 #grid-container {
@@ -29,9 +31,12 @@ main {
 
 .grid-block {
   display: flex;
-  background-color: pink;
   width: 50px;
   height: 50px;
   padding: 0px;
   margin: 0px;
+}
+
+.blue {
+  background-color: black;
 }
