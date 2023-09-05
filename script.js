@@ -2,6 +2,8 @@ const mainContainer = document.getElementById("canvas-container");
 const canvasContainer = document.createElement("div");
 canvasContainer.id = "grid-container";
 
+let clearBtn = document.getElementById("clear-sketch");
+
 function generateGrid() {
   for (let i = 1; i <= 256; i++) {
     let divElement = document.createElement("div");
@@ -22,4 +24,10 @@ let gridBlocks = document.querySelectorAll(".grid-block");
 
 gridBlocks.forEach((block) => {
   block.addEventListener("mouseover", () => block.classList.add("blue"));
+});
+
+clearBtn.addEventListener("click", () => {
+  gridBlocks.forEach((block) => {
+    block.classList.remove("blue");
+  });
 });
