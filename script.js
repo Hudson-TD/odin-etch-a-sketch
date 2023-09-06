@@ -6,6 +6,7 @@ const value = document.querySelector("#value");
 const input = document.querySelector("#grid-formatter");
 const clearBtn = document.getElementById("clear-sketch");
 const updateBtn = document.getElementById("update-grid");
+const rainbowBtn = document.getElementById("rainbow-effect");
 
 canvasContainer.id = "grid-container";
 
@@ -42,15 +43,29 @@ init();
 let gridBlocks = document.querySelectorAll("div.grid-block");
 
 gridBlocks.forEach((block) => {
-  block.addEventListener("mouseover", () => block.classList.add("default"));
+  block.addEventListener(
+    "mouseover",
+    () => (block.style.backgroundColor = "#5A5A5A")
+  );
 });
 
 clearBtn.addEventListener("click", () => {
   gridBlocks.forEach((block) => {
-    block.classList.remove("default");
+    block.style.backgroundColor = "#FFFFFF";
   });
 });
 
 updateBtn.addEventListener("click", () => {
   location.reload();
 });
+
+function setRandomBg() {
+  gridBlocks.forEach((block) => {
+    block.addEventListener("mouseover", () => {
+      let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      block.style.backgroundColor = "#" + randomColor;
+    });
+  });
+}
+
+rainbowBtn.addEventListener("click", setRandomBg);
