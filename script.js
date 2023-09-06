@@ -5,23 +5,19 @@ const canvasContainer = document.createElement("div");
 const value = document.querySelector("#value");
 const input = document.querySelector("#grid-formatter");
 const clearBtn = document.getElementById("clear-sketch");
-const updateGrid = document.getElementById("update-grid");
+const updateBtn = document.getElementById("update-grid");
 
 canvasContainer.id = "grid-container";
 
 function generateGrid() {
   for (let i = 1; i <= gridValue * gridValue; i++) {
-    canvasContainer.style.cssText = `width:800px;height:800px;display:grid;grid-template-columns:repeat(${gridValue}, 1fr);grid-template-rows:repeat(${gridValue},1fr);grid-row-gap:0px;grid-column-gap:0px;`;
+    canvasContainer.style.cssText = `width:800px;height:800px;display:grid;grid-template-columns:repeat(${gridValue}, 1fr);grid-template-rows:repeat(${gridValue},1fr);grid-row-gap:0px;grid-column-gap:0px;background-color:white;`;
     let divElement = document.createElement("div");
     divElement.classList.add("grid-block");
     canvasContainer.appendChild(divElement);
   }
 
   mainContainer.appendChild(canvasContainer);
-}
-
-function refreshGrid() {
-  generateGrid();
 }
 
 function init() {
@@ -53,4 +49,8 @@ clearBtn.addEventListener("click", () => {
   gridBlocks.forEach((block) => {
     block.classList.remove("default");
   });
+});
+
+updateBtn.addEventListener("click", () => {
+  location.reload();
 });
